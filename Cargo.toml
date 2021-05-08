@@ -1,0 +1,13 @@
+[package]
+name = "chatrs"
+version = "0.1.0"
+authors = ["Teemu Erkkola <teemu.erkkola@gofore.com>"]
+edition = "2018"
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+bincode = "1.3.1"
+thiserror = "1.0.24"
+
+[workspace]
+members = ["web_client", "cli_client", "message_server", "web_server"]

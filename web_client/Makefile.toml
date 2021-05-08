@@ -1,0 +1,30 @@
+[tasks.copy_static]
+script = [
+  "mkdir -p ../target/debug/web_client",
+  "cp -r static/* ../target/debug/web_client/"
+  ]
+
+[tasks.copy_static_release]
+script = [
+  "mkdir -p ../target/release/web_client",
+  "cp -r static/* ../target/release/web_client/"
+  ]
+
+[tasks.build_release]
+description = "Build with wasm-pack"
+command = "wasm-pack"
+args = ["build", "--target", "web", "--out-dir", "../target/release/web_client/pkg", "--out-name", "package", "--release"]
+dependencies = ["copy_static_release"]
+
+[tasks.build]
+description = "Build with wasm-pack"
+command = "wasm-pack"
+args = ["build", "--target", "web", "--out-dir", "../target/debug/web_client/pkg", "--out-name", "package", "--dev"]
+dependencies = ["copy_static"]
+
+[tasks.start]
+description = "Build and start microserver"
+install_crate = { crate_name = "microserver", binary = "microserver", test_arg = "-h" }
+command = "microserver"
+args = ["--port", "8000"]
+dependencies = ["build"]

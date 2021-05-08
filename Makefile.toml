@@ -1,0 +1,6 @@
+#[tasks.watch]
+#watch = true
+#dependencies = ["build"]
+
+[env]
+CARGO_MAKE_EXTEND_WORKSPACE_MAKEFILE = true

@@ -1,0 +1,73 @@
+.buffer {
+    height: 20ch;
+    background-color: #222;
+    width: 80ch;
+    color: white;
+    list-style: none;
+    padding: 1ch;
+    font-family: monospace;
+    font-size: 12pt;
+    overflow-y: scroll;
+    margin: 0;
+}
+.buffer li.status {
+  color: grey;
+}
+
+.buffer li.error {
+  color: crimson;
+}
+.nick {
+  color: violet;
+}
+
+.inputbar, .toolbar {
+  display: flex;
+  background-color: #444;
+  margin: 0;
+  padding: 0;
+  width: 82ch;
+  font-size: 12pt;
+  font-family: monospace;
+  color: white;
+}
+
+.inputbar {
+  border-top: 1px solid gray;
+}
+
+.toolbar {
+  border-bottom: 1px solid gray;
+}
+
+.inputbar label {
+  color: violet;
+  border-right: 1px solid gray;
+  padding: 0 1ch;
+}
+
+.inputbar input {
+  flex: auto;
+  color: white;
+  background-color: transparent;
+  border: none;
+  font-size: inherit;
+  font-family: inherit;
+  margin-left: 1ch;
+
+}
+
+.inputbar input:focus {
+    outline: none;
+}
+
+.toolbar button {
+  background-color: #666;
+  color: white;
+  border-width: 0 1px 0 0;
+}
+
+.toolbar button:disabled {
+  background-color: #444;
+  color: gray;
+}
